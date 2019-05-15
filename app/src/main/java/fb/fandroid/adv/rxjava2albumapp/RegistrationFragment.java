@@ -13,7 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import fb.fandroid.adv.rxjava2userauthapp.model.User;
+
+import fb.fandroid.adv.rxjava2albumapp.model.User;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -32,7 +33,7 @@ public class RegistrationFragment extends Fragment {
         @Override
         public void onClick(View view) {
             if (isInputValid()) {
-                User  user = new User(
+                User user = new User(
                         mEmail.getText().toString(),
                         mName.getText().toString(),
                         mPassword.getText().toString());

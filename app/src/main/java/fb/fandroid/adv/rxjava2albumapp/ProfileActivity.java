@@ -8,7 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import fb.fandroid.adv.rxjava2userauthapp.model.User;
+import fb.fandroid.adv.rxjava2albumapp.model.User;
 
 
 public class ProfileActivity extends AppCompatActivity {

@@ -9,8 +9,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import fb.fandroid.adv.rxjava2userauthapp.R;
-import fb.fandroid.adv.rxjava2userauthapp.model.Albums;
+import fb.fandroid.adv.rxjava2albumapp.R;
+import fb.fandroid.adv.rxjava2albumapp.model.Albums;
+
 
 /**
  * @author Azret Magometov

@@ -9,7 +9,8 @@ import com.google.gson.JsonParseException;
 
 import java.lang.reflect.Type;
 
-import fb.fandroid.adv.rxjava2userauthapp.model.User;
+import fb.fandroid.adv.rxjava2albumapp.model.User;
+
 
 /**
  * Created by andrew on 11.05.2019.

@@ -4,7 +4,8 @@ package fb.fandroid.adv.rxjava2albumapp;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import fb.fandroid.adv.rxjava2userauthapp.model.User;
+
+import fb.fandroid.adv.rxjava2albumapp.model.User;
 import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

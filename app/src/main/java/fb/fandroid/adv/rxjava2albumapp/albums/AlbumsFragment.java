@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import fb.fandroid.adv.rxjava2albumapp.ApiUtils;
 import fb.fandroid.adv.rxjava2albumapp.R;
 import fb.fandroid.adv.rxjava2albumapp.album.DetailAlbumFragment;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 

@@ -4,8 +4,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import fb.fandroid.adv.rxjava2userauthapp.R;
-import fb.fandroid.adv.rxjava2userauthapp.model.Albums;
+import fb.fandroid.adv.rxjava2albumapp.R;
+import fb.fandroid.adv.rxjava2albumapp.model.Albums;
+
 
 /**
  * @author Azret Magometov

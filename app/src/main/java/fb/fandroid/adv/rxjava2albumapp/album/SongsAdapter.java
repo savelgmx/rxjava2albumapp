@@ -9,8 +9,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import fb.fandroid.adv.rxjava2userauthapp.R;
-import fb.fandroid.adv.rxjava2userauthapp.model.Song;
+import fb.fandroid.adv.rxjava2albumapp.R;
+import fb.fandroid.adv.rxjava2albumapp.model.Song;
+
 
 public class SongsAdapter extends RecyclerView.Adapter<SongsHolder> {
 
