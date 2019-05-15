@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import fb.fandroid.adv.rxjava2albumapp.albums.AlbumsActivity;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -46,10 +47,13 @@ public class AuthFragment extends Fragment {
                         .subscribe(user->{
                                     //здесь данные которые успешно извлечены из user после вызова API
                                     //далее действия при успехе
+/*
                                     Intent startProfileIntent = new Intent(getActivity(), ProfileActivity.class);
                                     startProfileIntent.putExtra(ProfileActivity.USER_KEY, user);
                                     startActivity(startProfileIntent);
-                                    getActivity().finish();
+*/
+                                    startActivity(new Intent(getActivity(), AlbumsActivity.class));
+                                     getActivity().finish();
 
                                 },throwable -> {
                                     Toast.makeText(getActivity(),R.string.auth_error,Toast.LENGTH_SHORT).show();

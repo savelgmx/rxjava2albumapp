@@ -18,9 +18,9 @@ import fb.fandroid.adv.rxjava2albumapp.model.Albums;
 import fb.fandroid.adv.rxjava2albumapp.R;
 
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
+
 
 public class DetailAlbumFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
     private static final String ALBUM_KEY = "ALBUM_KEY";
@@ -81,27 +81,23 @@ public class DetailAlbumFragment extends Fragment implements SwipeRefreshLayout.
 
     private void getAlbum() {
 
-        ApiUtils.getApiService().getAlbum(mAlbum.getId()).enqueue(new Callback<Album>() {
-            @Override
-            public void onResponse(Call<Album> call, Response<Album> response) {
-                if (response.isSuccessful()) {
+        ApiUtils.getApiService()
+                .getAlbum(mAlbum.getId())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(disposable -> mRefresher.setRefreshing(true))
+                .doFinally(() -> mRefresher.setRefreshing(false))
+                .subscribe(album -> {
                     mErrorView.setVisibility(View.GONE);
                     mRecyclerView.setVisibility(View.VISIBLE);
-                    mSongsAdapter.addData(response.body().getData().getSongs(), true);
-                } else {
+                    mSongsAdapter.addData(album.getData().getSongs(), true);
+
+                },  throwable -> {
                     mErrorView.setVisibility(View.VISIBLE);
                     mRecyclerView.setVisibility(View.GONE);
-                }
-                mRefresher.setRefreshing(false);
-            }
 
-            @Override
-            public void onFailure(Call<Album> call, Throwable t) {
-                mErrorView.setVisibility(View.VISIBLE);
-                mRecyclerView.setVisibility(View.GONE);
-                mRefresher.setRefreshing(false);
-            }
-        });
-    }
+                });
+
+    } //get albums
 
 }
